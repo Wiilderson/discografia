@@ -1,0 +1,93 @@
+body {
+    background-image: url('../assets/background.png');
+    background-size: cover;
+}
+
+header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 80rem;
+    height: 99px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    >span{
+        font-size: xx-large;
+    }
+}
+
+input[type="text"] {
+    padding: 8px;
+    width: 654px;
+    border: none;
+    border-radius: 27px;
+    height: 30px;
+}
+
+input[type="submit"] {
+    padding: 8px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 72px;
+    height: 42px;
+    width: 137px;
+}
+
+.teste {
+    background-color: rgba(242, 242, 242, 0.70);
+    width: 80rem;
+    margin: auto;
+    padding: 20px;
+
+    >form{
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    >table{
+        width: 100%;
+        /* border-collapse: collapse; */
+        margin: auto;
+    }
+
+    >tr, th {   
+        padding: 8px;
+        text-align: left;
+        
+    }
+
+    .tr{
+        display: flex;
+        justify-content: space-between;
+         >td {   
+            padding: 8px;
+            text-align: left;
+            >span{
+                margin-left: 70px;
+            }
+           
+        }
+    }
+
+    .Td{
+        display: flex;
+        justify-content: space-between;
+         >td {   
+            padding: 8px;
+            text-align: left;
+            >span{
+                margin-left: 78px;
+            }
+        }
+        .tdh{
+            margin-right: 24px;
+        }
+    }
+
+
+}
