@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Album;
 use Illuminate\Http\Request;
 
-class Discografia extends Controller
+class AlbumsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view('index');
     }
 
     /**
@@ -28,8 +29,18 @@ class Discografia extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'album_name' => 'required',
+        ]);
+
+        $album = new Album;
+        $album->name_album = $request->input('album_name');
+
+        $album->save();
+
+        return redirect()->route('albums.index');
     }
+
 
     /**
      * Display the specified resource.
