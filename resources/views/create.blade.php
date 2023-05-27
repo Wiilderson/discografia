@@ -1,33 +1,16 @@
-<!DOCTYPE html>
-<html>
+@extends('layouts.app')
+@section('content')
 
-<head>
-    <title>Página PHP</title>
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-</head>
+<div class="teste">
+    <form method="POST" action="{{ route('album.store') }}">
+        @csrf
 
-<body>
-    <header>
-        <div>
-            <img src="{{ asset('assets/logo.png') }}" alt="Logo disco">
-        </div>
+        <label for="album_name">Nome do Álbum:</label>
+        <input class="inputText" type="text" name="album_name" id="album_name" required>
 
-        <span>Discografia</span>
-    </header>
+        <input type="submit" value="Salvar Album" />
 
-    <div class="teste">
-        <form method="POST" action="{{ route('album.store') }}">
-            @csrf
-            <div>
-                <label for="album_name">Nome do Álbum:</label>
-                <input type="text" name="album_name" id="album_name" required>
-            </div>
-            <div>
-                <button type="submit">Salvar Álbum</button>
-            </div>
-        </form>
+    </form>
 
-    </div>
-</body>
-
-</html>
+</div>
+@endsection

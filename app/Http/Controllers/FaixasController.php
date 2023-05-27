@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Album;
+use App\Models\Faixas;
 use Illuminate\Http\Request;
 
-class AlbumsController extends Controller
+class FaixasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,59 +17,59 @@ class AlbumsController extends Controller
         return view('index');
     }
 
-    public function list()
+
+    public function createTracks()
     {
-
-        // $albuns = Album::all();
-        // $faixas = Faixas::all();
-        // return view('list', compact('albuns', 'faixas'));
-
-        $teste = Album::with('faixas')->get();
-        return view('list', ['albuns' => $teste]);
+        // return view('tracks');
     }
 
+    public function showAlbuns()
+    {
+        //$album = Album::all();
+
+        $teste = Album::with('faixas')->get();
+        return view('tracks', ['albuns' => $teste]);
+    }
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
-            'album_name' => 'required',
+            'id' => 'required',
+            'id_album' => 'required',
+            'faixa' => 'required',
+            'duracao' => 'required',
         ]);
 
-        $album = new Album;
-        $album->name_album = $request->input('album_name');
+        $tracks = new Faixas;
 
-        $album->save();
+        $tracks->album_id = $request->input('id_album');
+        $tracks->numero_faixa = $request->input('id');
+        $tracks->faixas = $request->input('faixa');
+        $tracks->duracao = $request->input('duracao');
+
+
+        $tracks->save();
 
         return redirect()->route('albums.index');
     }
 
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(string $id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $request, string $id)
     {
         //

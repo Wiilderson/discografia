@@ -10,4 +10,9 @@ class Album extends Model
     use HasFactory;
 
     protected $fillable = ['name_album'];
+
+    public function faixas()
+    {
+        return $this->hasMany(Faixas::class);
+    }
 }

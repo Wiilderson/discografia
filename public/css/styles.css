@@ -10,31 +10,18 @@ header {
     height: 99px;
     margin: auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    >span{
-        font-size: xx-large;
+    flex-direction: column;
+    >div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        >span{
+            font-size: xx-large;
+        } 
     }
 }
 
-input[type="text"] {
-    padding: 8px;
-    width: 654px;
-    border: none;
-    border-radius: 27px;
-    height: 30px;
-}
-
-input[type="submit"] {
-    padding: 8px 20px;
-    background-color: #4a90e2;
-    color: white;
-    border: none;
-    border-radius: 72px;
-    height: 42px;
-    width: 137px;
-}
 
 .teste {
     background-color: rgba(242, 242, 242, 0.70);
@@ -47,11 +34,30 @@ input[type="submit"] {
         display: flex;
         justify-content: center;
         gap: 20px;
+        align-items: center;
+        
+        >input[type="text"]{
+            padding: 8px;
+            width: 654px;
+            border: none;
+            border-radius: 27px;
+            height: 30px;
+        }
+        
+        >input[type="submit"]{
+            padding: 8px 20px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 72px;
+            height: 42px;
+            width: 137px;
+        }
     }
+
 
     >table{
         width: 100%;
-        /* border-collapse: collapse; */
         margin: auto;
     }
 
@@ -90,4 +96,80 @@ input[type="submit"] {
     }
 
 
+}
+/* menu css */
+
+.header {
+    display: flex;
+    background-color: #f2f2f2;
+    padding: 10px;
+    justify-content: center;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.menu li a:hover {
+    background-color: #ccc;
+}
+
+/* tracks css */
+
+.tracksForm{ 
+    background-color: rgba(242, 242, 242, 0.70);
+    width: 80rem;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+
+    .select{
+        width: 100px;
+        height: 28px;
+        border: none;
+    }
+    
+    .inputTracksNumber {
+        width: 70px;
+        padding: 8px;
+        border: none;
+        border-radius: 27px;
+        height: 25px;
+        margin-bottom: 10px;
+    }
+
+     
+    .inputFaixa{
+        padding: 8px;
+        width: 430px;
+        border: none;
+        border-radius: 27px;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+    
+    .submit {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 15px;
+    }
 }

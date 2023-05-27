@@ -1,15 +1,11 @@
 @extends('layouts.app')
 @section('content')
 <div class="teste">
-    <form action="" method="GET">
 
-        <input type="text" name="pesquisa" placeholder="Digite sua palavra e pesquise">
-        <input type="submit" value="Pesquisar">
-
-    </form>
+    @foreach ($albuns as $item)
     <table>
         <tr>
-            <th>Album: Rei do Gado, 1961</th>
+            <th>Album: {{$item->name_album}}</th>
         </tr>
         <tr class="tr">
             <td>
@@ -20,14 +16,17 @@
             </td>
         </tr>
 
+        @foreach ($item->faixas as $faixa)
         <tr class="Td">
             <td>
-                1 <span>Minas gerais</span>
+                {{$faixa->numero_faixa}} <span>{{$faixa->faixas}}</span>
             </td>
-            <td class="tdh">
-                3:21
+            <td>
+                {{$faixa->duracao}}
             </td>
         </tr>
+        @endforeach
     </table>
+    @endforeach
 </div>
 @endsection
