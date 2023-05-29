@@ -22,6 +22,7 @@
                 <li><a href="/list">Albuns</a></li>
                 <li><a href="/create">Criar Albuns</a></li>
                 <li><a href="/create-tracks">Criar Faixas</a></li>
+                <li><a href="/list/action">Config</a></li>
             </ul>
         </div>
     </header>

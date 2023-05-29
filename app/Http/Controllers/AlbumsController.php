@@ -27,6 +27,13 @@ class AlbumsController extends Controller
         return view('list', ['albuns' => $teste]);
     }
 
+    public function listActions()
+    {
+
+        $teste = Album::with('faixas')->get();
+        return view('delete', ['albuns' => $teste]);
+    }
+
     public function create()
     {
         //
@@ -47,6 +54,15 @@ class AlbumsController extends Controller
         $album->save();
 
         return redirect()->route('albums.index');
+    }
+
+
+    public function deleteAlbum($id)
+    {
+        //
+        $faixa = Album::find($id);
+        $faixa->delete();
+        return redirect()->route('album.action');
     }
 
 

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
 <div class="tracksForm">
     <form method="POST" action="{{ route('faixas.store') }}">
         @csrf
@@ -7,8 +8,9 @@
             <label class="labelTracks" for="id">Numero Faixa:</label>
             <input class="inputTracksNumber" type="text" name="id" id="id" required>
             <select class="select" name='id_album'>
+                <option class="option" value="">Album</option>
                 @foreach ($albuns as $dado)
-                <option value="{{ $dado->id }}">{{ $dado->name_album }}</option>
+                <option class="option" value="{{ $dado->id }}">{{ $dado->name_album }}</option>
                 @endforeach
             </select>
         </div>

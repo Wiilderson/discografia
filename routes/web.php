@@ -18,9 +18,14 @@ Route::get("/index", [AlbumsController::class, 'index'])->name("albums.index");
 Route::get("/list", [AlbumsController::class, 'list'])->name("album.list");
 
 //Route::get("/create-tracks", [FaixasController::class, 'createTracks'])->name("album.tracks");
+Route::delete('/delete/{id}', [FaixasController::class, 'deleteFaixa'])->name('delete.faixa');
+
+Route::delete('/delete/album/{id}', [AlbumsController::class, 'deleteAlbum'])->name('delete.album');
 
 Route::get("/create-tracks", [FaixasController::class, 'showAlbuns'])->name("get.albuns");
 
 Route::post("/create", [AlbumsController::class, 'store'])->name("album.store");
 
 Route::post("/tracks", [FaixasController::class, 'store'])->name("faixas.store");
+
+Route::get("/list/action", [AlbumsController::class, 'listActions'])->name("album.action");

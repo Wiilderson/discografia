@@ -17,7 +17,6 @@ class FaixasController extends Controller
         return view('index');
     }
 
-
     public function createTracks()
     {
         // return view('tracks');
@@ -25,7 +24,6 @@ class FaixasController extends Controller
 
     public function showAlbuns()
     {
-        //$album = Album::all();
 
         $teste = Album::with('faixas')->get();
         return view('tracks', ['albuns' => $teste]);
@@ -58,6 +56,17 @@ class FaixasController extends Controller
     }
 
 
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function deleteFaixa($id)
+    {
+        //
+        $faixa = Faixas::find($id);
+        $faixa->delete();
+        return redirect()->route('album.action');
+    }
+
     public function show(string $id)
     {
         //
@@ -71,14 +80,6 @@ class FaixasController extends Controller
 
 
     public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
     {
         //
     }

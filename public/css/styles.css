@@ -139,10 +139,8 @@ header {
     display: flex;
     justify-content: center;
 
-    .select{
-        width: 100px;
-        height: 28px;
-        border: none;
+    >form{
+        margin-left: 28px;
     }
     
     .inputTracksNumber {
@@ -173,3 +171,16 @@ header {
         border-radius: 15px;
     }
 }
+
+select{
+    width: 100px;
+    height: 28px;
+    border: none;
+    margin-left: 20px;
+}
+
+select option {
+    /* Estilos de fundo e texto */
+    background-color: #f3efef;
+    color: #333;
+  }
