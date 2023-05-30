@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Album;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AlbumsController extends Controller
 {
@@ -18,11 +19,6 @@ class AlbumsController extends Controller
 
     public function list()
     {
-
-        // $albuns = Album::all();
-        // $faixas = Faixas::all();
-        // return view('list', compact('albuns', 'faixas'));
-
         $teste = Album::with('faixas')->get();
         return view('list', ['albuns' => $teste]);
     }
@@ -39,9 +35,7 @@ class AlbumsController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
         $request->validate([
@@ -56,7 +50,6 @@ class AlbumsController extends Controller
         return redirect()->route('albums.index');
     }
 
-
     public function deleteAlbum($id)
     {
         //
@@ -65,21 +58,26 @@ class AlbumsController extends Controller
         return redirect()->route('album.action');
     }
 
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function searchAlbumFaixa(Request $request)
     {
-        //
+        $termo = $request->input('pesquisa');
+
+        $results = DB::table('albums')
+            ->join('faixas', 'albums.id', '=', 'faixas.album_id')
+            ->whereRaw("albums.name_album ilike '%$termo%'")
+            ->orWhereRaw("faixas.faixas ilike '%$termo%'")
+            ->get();
+
+        //dd($results);
+        return view('home', ['albuns' => $results]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function showHome()
     {
-        //
+        return view('home');
     }
 
     /**
