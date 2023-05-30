@@ -5,34 +5,27 @@ Aplicação para listar, cadastrar e buscar dados de uma discografia.
 
 ## Iniciando o projeto:
 
-### Server Back Node
+### Server laravel
 
-Fazer instalação dos pacotes com `npm install`;
+Faça clone do repositório na sua maquina;
 
-Inicializar o servidor com `npm start` na pasta backend para rodar aplicação; 
+Configure o banco de dados de acordo com seu ambiente, utilize o .env;
 
-### Angular inicialiação
+rode as migrations para criar tabelas bancos;
 
-Fazer instalação dos pacotes dentro da pasta carts-shopping com `npm install`;
-
-Rodar `ng serve` para inicializar a aplicação Angular. 
+Inicializar o servidor com `php artisan serve` para rodar aplicação;
+por padrão ela rodará com localhost http://127.0.0.1:8000.
 
 ### Tecnologias Utilizadas ⌨
 
- - [Nodejs](https://nodejs.org/en);
- - [Angular](https://angular.io/docs);
- - [Typescript](https://www.typescriptlang.org/);
- - [Bootstrap](https://getbootstrap.com/docs/5.0/components/buttons/) para estilizar paginas e componentes;
- - CSS padrão para exceções;
- - [Swagger](https://swagger.io/specification/v3/) para documentar rotas e API;
-
+ - [Laravel](https://laravel.com/docs/10.x);
 
 ### imagens do projeto: 
 
 http://localhost:3000/documenttion/
 
 <div align="center"> 
-  <img src="https://user-images.githubusercontent.com/18035852/236470583-e7ce59f0-2597-4fe5-b692-2a790dda1339.png" width="1000px"/>
+  <img src="https://github.com/Wiilderson/carts-api/assets/18035852/4d03d9ee-888e-4920-9ce9-2a6fca5639ed" width="1000px"/>
 </div>
 
 
