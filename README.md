@@ -11,9 +11,10 @@ Faça clone do repositório na sua maquina;
 
 Configure o banco de dados de acordo com seu ambiente, utilize o .env;
 
-rode as migrations para criar tabelas bancos;
+rode as migrations para criar tabelas no banco;
 
 Inicializar o servidor com `php artisan serve` para rodar aplicação;
+
 por padrão ela rodará com localhost http://127.0.0.1:8000.
 
 ### Tecnologias Utilizadas ⌨
