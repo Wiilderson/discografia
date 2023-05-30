@@ -58,7 +58,7 @@ class AlbumsController extends Controller
     {
         $termo = $request->input('pesquisa');
 
-        $teste = DB::table('albums')
+        $results = DB::table('albums')
             ->join('faixas', 'albums.id', '=', 'faixas.album_id')
             ->whereRaw("albums.name_album ilike '%$termo%'")
             ->orWhereRaw("faixas.faixas ilike '%$termo%'")
@@ -71,8 +71,8 @@ class AlbumsController extends Controller
         //     ->whereRaw("albums.name_album ILIKE '%$termo%'")
         //     ->get();
 
-        //dd($results, $teste);
-        return view('home', ['albuns' => $teste]);
+        //dd($results);
+        return view('home', ['albuns' => $results]);
     }
 
     /**

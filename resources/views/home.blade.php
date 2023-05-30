@@ -8,8 +8,8 @@
     </form>
 
     <table>
-        <tr>
 
+        <tr>
             <th>Album: {{$albuns[0]->name_album}}</th>
 
         </tr>
@@ -30,6 +30,7 @@
                 {{$item->duracao}}
             </td>
         </tr>
+
         @endforeach
     </table>
 
