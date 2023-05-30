@@ -9,9 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class AlbumsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         return view('index');
@@ -35,7 +33,6 @@ class AlbumsController extends Controller
         //
     }
 
-
     public function store(Request $request)
     {
         $request->validate([
@@ -52,7 +49,6 @@ class AlbumsController extends Controller
 
     public function deleteAlbum($id)
     {
-        //
         $faixa = Album::find($id);
         $faixa->delete();
         return redirect()->route('album.action');
@@ -62,14 +58,21 @@ class AlbumsController extends Controller
     {
         $termo = $request->input('pesquisa');
 
-        $results = DB::table('albums')
+        $teste = DB::table('albums')
             ->join('faixas', 'albums.id', '=', 'faixas.album_id')
             ->whereRaw("albums.name_album ilike '%$termo%'")
             ->orWhereRaw("faixas.faixas ilike '%$termo%'")
+            ->distinct()
             ->get();
 
-        //dd($results);
-        return view('home', ['albuns' => $results]);
+        // $results = DB::table('faixas')
+        //     ->select('faixas.*', 'albums.name_album')
+        //     ->join('albums', 'faixas.album_id', '=', 'albums.id')
+        //     ->whereRaw("albums.name_album ILIKE '%$termo%'")
+        //     ->get();
+
+        //dd($results, $teste);
+        return view('home', ['albuns' => $teste]);
     }
 
     /**
