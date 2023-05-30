@@ -22,8 +22,6 @@ por padrão ela rodará com localhost http://127.0.0.1:8000.
 
 ### imagens do projeto: 
 
-http://localhost:3000/documenttion/
-
 <div align="center"> 
   <img src="https://github.com/Wiilderson/carts-api/assets/18035852/4d03d9ee-888e-4920-9ce9-2a6fca5639ed" width="1000px"/>
 </div>
